@@ -1,5 +1,5 @@
 /**
- * routes/authRoutes.js – Authentication Routes (Ostello)
+ * routes/authRoutes.js – Authentication Routes (INSTANT HOST)
  *
  * Public routes:
  *   POST /api/register         → register with role

@@ -1,11 +1,11 @@
 /**
- * models/userModel.js - Data Access Layer for Users (Ostello)
+ * models/userModel.js - Data Access Layer for Users (INSTANT HOST)
  *
  * Roles: STUDENT, CUSTODIAN, ADMIN
  * Fields: full_name, email, phone, password_hash, role, institution,
  *         is_verified, verification_token, reset_token, reset_token_expires
  */
-const db   = require('../config/db');
+const db = require('../config/db');
 const bcrypt = require('bcryptjs');
 
 const User = {

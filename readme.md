@@ -1,7 +1,8 @@
-# Ostello API — Hostel Discovery & Booking Platform
+# INSTANT HOST API — Hostel Discovery & Booking Platform
 
-> **Learning Project** — Built by MUSASIZI KENNETH to teach students how to design and
-> build a real-world REST API with Node.js, Express.js and MySQL.
+> **Learning Project** — Built by MUSASIZI KENNETH to teach students at
+> **Uganda Christian University (UCU)** how to design and build a real-world
+> REST API with Node.js, Express.js and MySQL.
 >
 > Work through this code top-to-bottom. Every file has detailed comments that
 > explain *why* the code is written that way, not just *what* it does.
@@ -10,7 +11,7 @@
 
 ## Table of Contents
 
-1. [What is Ostello?](#what-is-ostello)
+1. [What is INSTANT HOST?](#what-is-instant-host)
 2. [What You Will Learn](#what-you-will-learn)
 3. [Tech Stack](#tech-stack)
 4. [Project Structure](#project-structure)
@@ -26,9 +27,9 @@
 
 ---
 
-## What is Ostello?
+## What is INSTANT HOST?
 
-Ostello is a **hostel discovery and booking platform** for university students.
+INSTANT HOST is a **hostel discovery and booking platform** for university students.
 It lets students find hostels near their campus, view available rooms, make
 booking requests, and pay — all through a REST API.
 
@@ -155,8 +156,8 @@ mysql --version   # should print 8.x.x
 ### Step 1 — Clone the repository
 
 ```bash
-git clone https://github.com/musasizi/ostello.git
-cd ostello/ostello_api
+git clone https://github.com/musasizi/instant_host.git
+cd instant_host/instant_host_api
 ```
 
 ### Step 2 — Install dependencies
@@ -180,7 +181,7 @@ mysql -u root -p
 
 ```sql
 -- Inside the MySQL shell:
-CREATE DATABASE ostello_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE instant_host_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 EXIT;
 ```
 
@@ -189,7 +190,7 @@ EXIT;
 
 ### Step 4 — Create your `.env` file
 
-Create a file called `.env` in the `ostello_api/` directory. This file holds
+Create a file called `.env` in the `instant_host_api/` directory. This file holds
 secret values that must NOT be committed to Git.
 
 ```bash
@@ -213,7 +214,7 @@ npm run seed
 
 Expected output:
 ```
-Connected to database. Running Ostello seed...
+Connected to database. Running INSTANT HOST seed...
 
 ✔  Dropped existing tables
 ✔  Table: users
@@ -254,14 +255,14 @@ curl http://localhost:3000/
 
 Expected response:
 ```json
-{ "message": "Ostello API is running 🏠", "status": "ok" }
+{ "message": "INSTANT HOST API is running 🏠", "status": "ok" }
 ```
 
 ---
 
 ## Environment Variables
 
-Create a file named `.env` in `ostello_api/`. **Never commit this file to Git**
+Create a file named `.env` in `instant_host_api/`. **Never commit this file to Git**
 — it is already listed in `.gitignore`.
 
 ```dotenv
@@ -270,7 +271,7 @@ DB_HOST=localhost          # MySQL host (use 'localhost' for local dev)
 DB_PORT=3306               # MySQL port (default is 3306)
 DB_USER=root               # MySQL username
 DB_PASSWORD=yourpassword   # MySQL password — CHANGE THIS!
-DB_DATABASE=ostello_db     # Database name you created in Step 3
+DB_DATABASE=instant_host_db     # Database name you created in Step 3
 
 # ── Server ────────────────────────────────────────────────────────────────────
 PORT=3000                  # Port the API listens on
@@ -286,7 +287,7 @@ EMAIL_HOST=smtp.gmail.com
 EMAIL_PORT=587
 EMAIL_USER=your@gmail.com
 EMAIL_PASS=your_app_password   # Use a Gmail App Password, NOT your real password
-EMAIL_FROM="Ostello <your@gmail.com>"
+EMAIL_FROM="INSTANT HOST <your@gmail.com>"
 ```
 
 ---
@@ -330,9 +331,9 @@ All accounts use the password **`password123`**.
 
 | Email | Role | Purpose |
 |-------|------|---------|
-| `admin@ostello.com` | ADMIN | Platform administration |
-| `john@ostello.com` | CUSTODIAN | Manages hostels (has 2 hostels) |
-| `grace@ostello.com` | CUSTODIAN | Manages hostels (has 2 hostels) |
+| `admin@instanthost.com` | ADMIN | Platform administration |
+| `john@instanthost.com` | CUSTODIAN | Manages hostels (has 2 hostels) |
+| `grace@instanthost.com` | CUSTODIAN | Manages hostels (has 2 hostels) |
 | `alice@student.com` | STUDENT | Test student user |
 | `bob@student.com` | STUDENT | Test student user |
 | `diana@student.com` | STUDENT | Test student user |
@@ -543,7 +544,7 @@ curl -X POST http://localhost:3000/api/bookings \
 # First login as a custodian
 curl -s -X POST http://localhost:3000/api/login \
   -H "Content-Type: application/json" \
-  -d '{"email":"john@ostello.com","password":"password123"}'
+  -d '{"email":"john@instanthost.com","password":"password123"}'
 
 # Then approve booking with id=1
 curl -X PUT http://localhost:3000/api/bookings/1/approve \

@@ -1,5 +1,5 @@
 /**
- * server.js – Ostello API Entry Point
+ * server.js – INSTANT HOST API Entry Point
  * ─────────────────────────────────────────────────────────────────────────────
  * This is the FIRST file Node.js runs when you type `npm start`.
  * Its job is to:
@@ -65,7 +65,7 @@ app.use(cors());
 // Useful to quickly verify the server is running without needing any auth.
 // Try: curl http://localhost:3000/
 app.get('/', (req, res) => {
-  res.json({ message: 'Ostello API is running 🏠', status: 'ok' });
+  res.json({ message: 'INSTANT HOST API is running 🏠', status: 'ok' });
 });
 
 // ─── API Routes ───────────────────────────────────────────────────────────────

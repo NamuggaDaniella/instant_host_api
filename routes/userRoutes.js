@@ -1,5 +1,5 @@
 /**
- * routes/userRoutes.js – User Management Routes (Ostello)
+ * routes/userRoutes.js – User Management Routes (INSTANT HOST)
  *
  * Protected routes:
  *   GET    /api/users/me       → own profile (any authenticated user)

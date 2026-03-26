@@ -1,5 +1,5 @@
 /**
- * controllers/userController.js – User Management Controller (Ostello)
+ * controllers/userController.js – User Management Controller (INSTANT HOST)
  *
  * Endpoints:
  *   GET    /api/users          → list all users (ADMIN)

@@ -1,5 +1,5 @@
 /**
- * scripts/seed.js – Database Schema & Seed Data for Ostello
+ * scripts/seed.js – Database Schema & Seed Data for INSTANT HOST
  *
  * Creates all tables and inserts sample data.
  * Run: npm run seed
@@ -20,7 +20,7 @@ async function seed() {
     port: process.env.DB_PORT,
   });
 
-  console.log('Connected to database. Running Ostello seed...\n');
+  console.log('Connected to database. Running INSTANT HOST seed...\n');
 
   // ── Drop existing tables (in reverse dependency order) ──────────────────────
   await db.execute('SET FOREIGN_KEY_CHECKS = 0');
@@ -144,9 +144,9 @@ async function seed() {
 
   // ── Users ───────────────────────────────────────────────────────────────────
   const users = [
-    { full_name: 'Admin User', email: 'admin@ostello.com', role: 'ADMIN', institution: 'Ostello Platform' },
-    { full_name: 'John Mukasa', email: 'john@ostello.com', role: 'CUSTODIAN', institution: null },
-    { full_name: 'Grace Namuddu', email: 'grace@ostello.com', role: 'CUSTODIAN', institution: null },
+    { full_name: 'Admin User', email: 'admin@instanthost.com', role: 'ADMIN', institution: 'INSTANT HOST Platform' },
+    { full_name: 'John Mukasa', email: 'john@instanthost.com', role: 'CUSTODIAN', institution: null },
+    { full_name: 'Grace Namuddu', email: 'grace@instanthost.com', role: 'CUSTODIAN', institution: null },
     { full_name: 'Alice Namutebi', email: 'alice@student.mak.ac.ug', role: 'STUDENT', institution: 'Makerere University' },
     { full_name: 'Bob Ssekandi', email: 'bob@student.mak.ac.ug', role: 'STUDENT', institution: 'Makerere University' },
     { full_name: 'Diana Kato', email: 'diana@student.ucu.ac.ug', role: 'STUDENT', institution: 'Uganda Christian University' },
@@ -283,17 +283,17 @@ async function seed() {
 
   // ── Summary ─────────────────────────────────────────────────────────────────
   console.log('═══════════════════════════════════════════');
-  console.log('  Ostello seed complete! 🏠');
+  console.log('  INSTANT HOST seed complete! 🏠');
   console.log('═══════════════════════════════════════════');
   console.log('');
   console.log('  Login credentials (password: password123):');
   console.log('');
   console.log('  ADMIN:');
-  console.log('    admin@ostello.com');
+  console.log('    admin@instanthost.com');
   console.log('');
   console.log('  CUSTODIANS:');
-  console.log('    john@ostello.com');
-  console.log('    grace@ostello.com');
+  console.log('    john@instanthost.com');
+  console.log('    grace@instanthost.com');
   console.log('');
   console.log('  STUDENTS:');
   console.log('    alice@student.mak.ac.ug');

@@ -1,5 +1,5 @@
 /**
- * controllers/authController.js – Authentication Controller (Ostello)
+ * controllers/authController.js – Authentication Controller (INSTANT HOST)
  *
  * Endpoints:
  *   POST /api/register         – Register with role selection
