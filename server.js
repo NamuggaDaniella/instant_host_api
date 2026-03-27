@@ -39,6 +39,7 @@ const roomRoutes = require('./routes/roomRoutes');
 const bookingRoutes = require('./routes/bookingRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const reviewRoutes = require('./routes/reviewRoutes');
+const messageRoutes = require('./routes/messageRoutes');
 
 // ─── Create Express Application ──────────────────────────────────────────────
 // express() returns a new application object. Think of it as an empty HTTP
@@ -82,6 +83,7 @@ app.use('/api', roomRoutes);      // /api/hostels/:id/rooms, /api/rooms/:id
 app.use('/api', bookingRoutes);   // /api/bookings, /api/bookings/:id
 app.use('/api', paymentRoutes);   // /api/payments, /api/payments/:id
 app.use('/api', reviewRoutes);    // /api/reviews, /api/hostels/:id/reviews
+app.use('/api', messageRoutes);   // /api/messages, /api/messages/with/:otherId
 
 // ─── 404 Handler ─────────────────────────────────────────────────────────────
 // If no route above matched the incoming URL this middleware runs.

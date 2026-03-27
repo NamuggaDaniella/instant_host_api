@@ -24,7 +24,7 @@ async function seed() {
 
   // ── Drop existing tables (in reverse dependency order) ──────────────────────
   await db.execute('SET FOREIGN_KEY_CHECKS = 0');
-  const tables = ['reviews', 'payments', 'bookings', 'rooms', 'hostels', 'users'];
+  const tables = ['reviews', 'messages', 'payments', 'bookings', 'rooms', 'hostels', 'users'];
   for (const table of tables) {
     await db.execute(`DROP TABLE IF EXISTS ${table}`);
   }
@@ -135,6 +135,21 @@ async function seed() {
     )
   `);
   console.log('✔  Table: reviews\n');
+
+  // ── Messages Table ───────────────────────────────────────────────────────
+  await db.execute(`
+    CREATE TABLE messages (
+      id         INT AUTO_INCREMENT PRIMARY KEY,
+      from_id    INT NOT NULL,
+      to_id      INT NOT NULL,
+      content    TEXT NOT NULL,
+      is_read    BOOLEAN DEFAULT FALSE,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (from_id) REFERENCES users(id) ON DELETE CASCADE,
+      FOREIGN KEY (to_id)   REFERENCES users(id) ON DELETE CASCADE
+    )
+  `);
+  console.log('✔  Table: messages\n');
 
   // ══════════════════════════════════════════════════════════════════════════════
   // ── SEED DATA ─────────────────────────────────────────────────────────────────
