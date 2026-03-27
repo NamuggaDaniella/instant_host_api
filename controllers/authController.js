@@ -83,10 +83,10 @@ const login = async (req, res) => {
 
         const user = results[0];
 
-        // Check if email is verified
-        if (!user.is_verified) {
-            return res.status(403).json({ error: 'Please verify your email before logging in.' });
-        }
+        // Temporarily skip email verification for development
+        // if (!user.is_verified) {
+        //     return res.status(403).json({ error: 'Please verify your email before logging in.' });
+        // }
 
         const validPassword = await bcrypt.compare(password, user.password_hash);
         if (!validPassword) {

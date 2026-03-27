@@ -88,7 +88,7 @@ const Booking = {
     checkOverlap: (room_id, check_in_date, check_out_date, exclude_id = null) => {
         let sql = `SELECT COUNT(*) AS count FROM bookings
                WHERE room_id = ?
-               AND status IN ('PENDING', 'APPROVED')
+               AND status = 'APPROVED'
                AND check_in_date < ?
                AND check_out_date > ?`;
         const params = [room_id, check_out_date, check_in_date];
